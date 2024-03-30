@@ -8,7 +8,9 @@ import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentOnFailureBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnFailureFragment(private val message: String) : DialogFragment() {
 
     private var _binding: FragmentOnFailureBinding? = null

@@ -3,10 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/onFailureFragment">
+    app:startDestination="@id/loginFragment">
     <dialog
         android:id="@+id/onFailureFragment"
         android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnFailureFragment"
         android:label="fragment_on_failure"
         tools:layout="@layout/fragment_on_failure" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.storibrianvianachallenge.main.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim" />
+    </fragment>
+    <dialog
+        android:id="@+id/onSuccessFragment"
+        android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnSuccessFragment"
+        android:label="fragment_on_success"
+        tools:layout="@layout/fragment_on_success" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.storibrianvianachallenge.main.ui.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_signUpFragment_to_onSuccessFragment"
+            app:destination="@id/onSuccessFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 </navigation>
