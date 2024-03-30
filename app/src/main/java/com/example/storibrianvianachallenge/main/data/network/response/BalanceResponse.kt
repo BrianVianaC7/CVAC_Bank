@@ -1,4 +1,4 @@
-package com.example.storibrianvianachallenge.home.data.network.response
+package com.example.storibrianvianachallenge.main.data.network.response
 
 import com.google.gson.annotations.SerializedName
 

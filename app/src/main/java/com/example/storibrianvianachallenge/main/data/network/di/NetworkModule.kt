@@ -1,8 +1,8 @@
-package com.example.storibrianvianachallenge.home.data.network.di
+package com.example.storibrianvianachallenge.main.data.network.di
 
 import com.example.storibrianvianachallenge.BuildConfig
 import com.example.storibrianvianachallenge.common.core.AuthInterceptor
-import com.example.storibrianvianachallenge.home.data.network.BankInformationApiClient
+import com.example.storibrianvianachallenge.main.data.network.BankInformationApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

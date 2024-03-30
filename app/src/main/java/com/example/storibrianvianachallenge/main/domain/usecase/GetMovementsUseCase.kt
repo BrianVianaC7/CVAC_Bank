@@ -1,6 +1,6 @@
-package com.example.storibrianvianachallenge.home.domain.usecase
+package com.example.storibrianvianachallenge.main.domain.usecase
 
-import com.example.storibrianvianachallenge.home.data.BankInformationRepository
+import com.example.storibrianvianachallenge.main.data.BankInformationRepository
 import javax.inject.Inject
 
 class GetMovementsUseCase @Inject constructor(private val repository: BankInformationRepository) {

@@ -1,12 +1,12 @@
-package com.example.storibrianvianachallenge.home.data
+package com.example.storibrianvianachallenge.main.data
 
-import com.example.storibrianvianachallenge.home.data.network.BankInformationService
-import com.example.storibrianvianachallenge.home.data.network.response.BalanceResponse
-import com.example.storibrianvianachallenge.home.data.network.response.MovementResponse
-import com.example.storibrianvianachallenge.home.data.network.response.TransactionResponse
-import com.example.storibrianvianachallenge.home.domain.model.BalanceModel
-import com.example.storibrianvianachallenge.home.domain.model.TransactionModel
-import com.example.storibrianvianachallenge.home.domain.model.toDomain
+import com.example.storibrianvianachallenge.main.data.network.BankInformationService
+import com.example.storibrianvianachallenge.main.data.network.response.BalanceResponse
+import com.example.storibrianvianachallenge.main.data.network.response.MovementResponse
+import com.example.storibrianvianachallenge.main.data.network.response.TransactionResponse
+import com.example.storibrianvianachallenge.main.domain.model.BalanceModel
+import com.example.storibrianvianachallenge.main.domain.model.TransactionModel
+import com.example.storibrianvianachallenge.main.domain.model.toDomain
 import javax.inject.Inject
 
 class BankInformationRepository @Inject constructor(

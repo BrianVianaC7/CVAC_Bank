@@ -1,8 +1,8 @@
-package com.example.storibrianvianachallenge.home.data.network
+package com.example.storibrianvianachallenge.main.data.network
 
-import com.example.storibrianvianachallenge.home.data.network.response.AccountBalanceResponse
-import com.example.storibrianvianachallenge.home.data.network.response.MovementsResponse
-import com.example.storibrianvianachallenge.home.data.network.response.TransactionResponse
+import com.example.storibrianvianachallenge.main.data.network.response.AccountBalanceResponse
+import com.example.storibrianvianachallenge.main.data.network.response.MovementsResponse
+import com.example.storibrianvianachallenge.main.data.network.response.TransactionResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

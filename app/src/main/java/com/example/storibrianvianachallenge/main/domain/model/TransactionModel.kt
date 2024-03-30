@@ -1,7 +1,7 @@
-package com.example.storibrianvianachallenge.home.domain.model
+package com.example.storibrianvianachallenge.main.domain.model
 
-import com.example.storibrianvianachallenge.home.data.network.response.MovementResponse
-import com.example.storibrianvianachallenge.home.data.network.response.TransactionResponse
+import com.example.storibrianvianachallenge.main.data.network.response.MovementResponse
+import com.example.storibrianvianachallenge.main.data.network.response.TransactionResponse
 
 data class TransactionModel(
     var detalle: String? = null,

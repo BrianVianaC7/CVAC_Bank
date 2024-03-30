@@ -1,10 +1,10 @@
-package com.example.storibrianvianachallenge.home.data.network
+package com.example.storibrianvianachallenge.main.data.network
 
-import com.example.storibrianvianachallenge.home.data.network.response.AccountBalanceResponse
-import com.example.storibrianvianachallenge.home.data.network.response.BalanceResponse
-import com.example.storibrianvianachallenge.home.data.network.response.MovementResponse
-import com.example.storibrianvianachallenge.home.data.network.response.MovementsResponse
-import com.example.storibrianvianachallenge.home.data.network.response.TransactionResponse
+import com.example.storibrianvianachallenge.main.data.network.response.AccountBalanceResponse
+import com.example.storibrianvianachallenge.main.data.network.response.BalanceResponse
+import com.example.storibrianvianachallenge.main.data.network.response.MovementResponse
+import com.example.storibrianvianachallenge.main.data.network.response.MovementsResponse
+import com.example.storibrianvianachallenge.main.data.network.response.TransactionResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response

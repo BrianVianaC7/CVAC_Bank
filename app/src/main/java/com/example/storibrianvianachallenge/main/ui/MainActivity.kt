@@ -1,4 +1,4 @@
-package com.example.storibrianvianachallenge.home.ui
+package com.example.storibrianvianachallenge.main.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
