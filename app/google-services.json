@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "628771006609",
+    "project_id": "storibrianvianachallenge",
+    "storage_bucket": "storibrianvianachallenge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628771006609:android:ecae9aec6befb86fde3730",
+        "android_client_info": {
+          "package_name": "com.example.storibrianvianachallenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmD2H6Rdxl-_2SSRSTsbz4wJBHWUcnhOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
