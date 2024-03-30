@@ -9,7 +9,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentOnFailureBinding
 
-class OnFailureFragment : DialogFragment() {
+class OnFailureFragment(private val message: String) : DialogFragment() {
 
     private var _binding: FragmentOnFailureBinding? = null
     private val binding get() = _binding!!

@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
-    id ("androidx.navigation.safeargs.kotlin")
+    id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
 }
 
@@ -25,6 +25,9 @@ android {
 
     buildTypes {
 
+        val properties = Properties()
+        properties.load(rootProject.file("local.properties").inputStream())
+
         getByName("release") {
             isMinifyEnabled = false
             isDebuggable = false
@@ -33,10 +36,12 @@ android {
                 "proguard-rules.pro"
             )
             resValue("string", "brianname", "StoriApp")
+            buildConfigField("String", "BASE_URL", properties.getProperty("BASE_URL"))
         }
         getByName("debug") {
             isDebuggable = true
             resValue("string", "brianname", "[DEBUG] StoriApp")
+            buildConfigField("String", "BASE_URL", properties.getProperty("BASE_URL"))
         }
     }
     compileOptions {
@@ -47,7 +52,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
         buildConfig = true
     }
@@ -70,7 +75,7 @@ dependencies {
     implementation("com.airbnb.android:lottie:$lottieVersion")
 
     //NavigationComponent
-    val navVersion =  "2.7.3"
+    val navVersion = "2.7.3"
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
 
@@ -79,18 +84,18 @@ dependencies {
     kapt("com.google.dagger:hilt-compiler:2.48")
 
     //Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     //Interceptor
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.3.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
 
     //Camera X
     val cameraVersion = "1.2.3"
-    implementation ("androidx.camera:camera-core:${cameraVersion}")
-    implementation ("androidx.camera:camera-camera2:${cameraVersion}")
-    implementation ("androidx.camera:camera-lifecycle:${cameraVersion}")
-    implementation ("androidx.camera:camera-view:${cameraVersion}")
-    implementation ("androidx.camera:camera-extensions:${cameraVersion}")
+    implementation("androidx.camera:camera-core:${cameraVersion}")
+    implementation("androidx.camera:camera-camera2:${cameraVersion}")
+    implementation("androidx.camera:camera-lifecycle:${cameraVersion}")
+    implementation("androidx.camera:camera-view:${cameraVersion}")
+    implementation("androidx.camera:camera-extensions:${cameraVersion}")
 
 
     //PICASSO

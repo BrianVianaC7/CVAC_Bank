@@ -11,7 +11,7 @@ import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentOnFailureBinding
 import com.example.storibrianvianachallenge.databinding.FragmentOnSuccessBinding
 
-class OnSuccessFragment : DialogFragment() {
+class OnSuccessFragment (private val message: String) : DialogFragment() {
     private var _binding: FragmentOnSuccessBinding? = null
     private val binding get() = _binding!!
 

@@ -3,5 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="StoriApp">StoriApp</string>
+    <string name="Error">Error</string>
+    <string name="ErrorDialog">Ocurrio un Problema</string>
+    <string name="Exito">Éxito</string>
+    <string name="Aceptar">Aceptar</string>
+
+
 
 </resources>

@@ -10,6 +10,20 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="TitleSuFaDialgo" parent="Title">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/RedDialog</item>
+    </style>
+    <style name="body" parent="TitleSuFaDialgo">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="TitleSuDialgo" parent="Title">
+        <item name="android:textColor">@color/GreenDialog</item>
+    </style>
+    <style name="TitleFaDialgo" parent="Title">
+        <item name="android:textColor">@color/RedDialog</item>
+    </style>
+
 
     <style name="FullScreenDialog">
         <item name="android:windowIsTranslucent">true</item>

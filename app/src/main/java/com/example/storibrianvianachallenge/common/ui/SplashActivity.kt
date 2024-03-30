@@ -9,7 +9,7 @@ import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.storibrianvianachallenge.databinding.ActivitySplashBinding
-import com.example.storibrianvianachallenge.ui.MainActivity
+import com.example.storibrianvianachallenge.home.ui.MainActivity
 
 
 @SuppressLint("CustomSplashScreen")
