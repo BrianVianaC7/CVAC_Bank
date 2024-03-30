@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/onFailureFragment">
+    <dialog
+        android:id="@+id/onFailureFragment"
+        android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnFailureFragment"
+        android:label="fragment_on_failure"
+        tools:layout="@layout/fragment_on_failure" />
+</navigation>
