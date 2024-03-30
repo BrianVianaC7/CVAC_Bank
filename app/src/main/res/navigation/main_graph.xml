@@ -21,6 +21,13 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@animator/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim" />
     </fragment>
     <dialog
         android:id="@+id/onSuccessFragment"
@@ -47,4 +54,14 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.storibrianvianachallenge.main.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/detailMovementFragment"
+        android:name="com.example.storibrianvianachallenge.main.ui.detail.DetailMovementFragment"
+        android:label="fragment_detail_movement"
+        tools:layout="@layout/fragment_detail_movement" />
 </navigation>

@@ -7,6 +7,17 @@
     <string name="ErrorDialog">Ocurrio un Problema</string>
     <string name="Exito">Éxito</string>
     <string name="Aceptar">Aceptar</string>
+    <string name="login">LOGIN</string>
+    <string name="register">REGISTER</string>
+    <string name="nombre">Nombre(s)</string>
+    <string name="apellido">Apellidos</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="cuenta_creada">¿Ya tienes una cuenta?</string>
 
 
 </resources>

@@ -9,7 +9,9 @@
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
-
+    <style name="TitleMain" parent="Title">
+        <item name="android:fontFamily">@font/dancing</item>
+    </style>
     <style name="TitleSuFaDialgo" parent="Title">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/RedDialog</item>

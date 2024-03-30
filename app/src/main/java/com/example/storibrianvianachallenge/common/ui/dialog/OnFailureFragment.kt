@@ -1,10 +1,14 @@
 package com.example.storibrianvianachallenge.common.ui.dialog
 
+import android.animation.Animator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentOnFailureBinding
@@ -26,8 +30,41 @@ class OnFailureFragment(private val message: String) : DialogFragment() {
     }
 
     private fun initUI() {
-        TODO("Not yet implemented")
+        showLottieAnimation()
     }
+
+
+    private fun showLottieAnimation() {
+        initLottieTransition()
+        binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator) {}
+
+            override fun onAnimationEnd(animation: Animator) {}
+
+            override fun onAnimationCancel(animation: Animator) {}
+
+            override fun onAnimationRepeat(animation: Animator) {}
+        })
+    }
+
+    private fun initLottieTransition() {
+        val appearAnimation = AlphaAnimation(0.0f, 1.0f)
+        appearAnimation.duration = 1000
+
+        appearAnimation.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(p0: Animation?) {
+                binding.apply {
+                    animationView.isVisible = true
+                    tvSubTitle.text = message
+                }
+            }
+
+            override fun onAnimationEnd(p0: Animation?) {}
+            override fun onAnimationRepeat(p0: Animation?) {}
+        })
+        binding.animationView.startAnimation(appearAnimation)
+    }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

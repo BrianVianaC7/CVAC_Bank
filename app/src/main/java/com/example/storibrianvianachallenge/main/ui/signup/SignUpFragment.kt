@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentLoginBinding
 import com.example.storibrianvianachallenge.databinding.FragmentSignUpBinding
@@ -24,11 +25,20 @@ class SignUpFragment : Fragment() {
     }
 
     private fun initUI() {
-        initUIState()
+        //initUIState()
+        initNavigation()
     }
 
     private fun initUIState() {
         TODO("Not yet implemented")
+    }
+
+    private fun initNavigation() {
+        binding.apply {
+            tvForgetLogin.setOnClickListener {
+                findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+            }
+        }
     }
 
     override fun onCreateView(

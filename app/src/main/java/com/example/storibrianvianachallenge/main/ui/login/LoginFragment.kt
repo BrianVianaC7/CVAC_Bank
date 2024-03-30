@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,12 +23,25 @@ class LoginFragment : Fragment() {
     }
 
     private fun initUI() {
-        initUIState()
+        //initUIState()
+        initNavigation()
     }
 
     private fun initUIState() {
         TODO("Not yet implemented")
     }
+
+    private fun initNavigation() {
+        binding.apply {
+            btnSignUp.setOnClickListener {
+                findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
+            }
+            btnLogin.setOnClickListener {
+                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            }
+        }
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentHomeBinding
@@ -23,9 +24,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun initUI() {
-        initUIState()
-        initRecyclerView()
-        initSwipeRefresh()
+        Toast.makeText(context, "hola", Toast.LENGTH_SHORT).show()
+        //initUIState()
+        //initRecyclerView()
+        //initSwipeRefresh()
     }
 
     private fun initUIState() {
