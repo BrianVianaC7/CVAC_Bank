@@ -44,6 +44,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initServices() {
+        initLoader()
         getMovements()
         getBalance()
     }
@@ -53,7 +54,7 @@ class HomeFragment : Fragment() {
         initMovementsUIState()
         initRecyclerView()
         initSwipeRefresh()
-        initFragment()
+        initToolbar()
     }
 
     private fun initBalanceUIState() {
@@ -91,12 +92,16 @@ class HomeFragment : Fragment() {
         pointerLayout.translationX = pointerPosition
     }
 
-
     private fun initMovementsUIState() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 homeViewModel.movements.collect {
-                    movementAdapter.updateList(it)
+                    if (it.isEmpty()) {
+                        binding.isEmptyOperations.isVisible = true
+                    } else {
+                        binding.isEmptyOperations.isVisible = false
+                        movementAdapter.updateList(it)
+                    }
                 }
             }
         }
@@ -183,7 +188,21 @@ class HomeFragment : Fragment() {
         parentFragmentManager.let { homeViewModel.getMovements("lcbsP9GoLBfryFrVTIYYaXfnrS03", it) }
     }
 
-    private fun initFragment() {
+    private fun initLoader() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                homeViewModel.isLoading.collect { loading ->
+                    if (loading) {
+                        binding.pbar.isVisible = true
+                    } else {
+                        binding.pbar.isVisible = false
+                    }
+                }
+            }
+        }
+    }
+
+    private fun initToolbar() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         val toolbar = activity?.findViewById<ImageView>(R.id.ivLogout)
         toolbar?.visibility = View.VISIBLE
