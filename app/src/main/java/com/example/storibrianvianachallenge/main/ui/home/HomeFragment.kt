@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -83,6 +84,9 @@ class HomeFragment : Fragment() {
             balance >= midBalance -> (progressBarWidth - pointerWidth.toFloat()) / 2  // Mover al centro
             else -> 0f  // Mover al inicio
         }
+
+        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_right)
+        pointerLayout.startAnimation(animation)
 
         pointerLayout.translationX = pointerPosition
     }
