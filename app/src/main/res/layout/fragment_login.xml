@@ -67,6 +67,15 @@
             android:maxLength="15" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/tvForget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/olvide_contrasena"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
@@ -76,7 +85,7 @@
         android:text="@string/iniciar_sesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+        app:layout_constraintTop_toBottomOf="@id/tvForget" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"

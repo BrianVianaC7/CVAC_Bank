@@ -30,6 +30,7 @@ class OnFailureFragment(private val message: String) : DialogFragment() {
     }
 
     private fun initUI() {
+        binding.tvDismiss.setOnClickListener { dismiss() }
         showLottieAnimation()
     }
 

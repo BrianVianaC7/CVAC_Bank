@@ -25,6 +25,11 @@ class LoginFragment : Fragment() {
     private fun initUI() {
         //initUIState()
         initNavigation()
+       // forgotPassword()
+    }
+
+    private fun forgotPassword() {
+        TODO("Not yet implemented")
     }
 
     private fun initUIState() {

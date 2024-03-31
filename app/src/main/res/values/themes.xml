@@ -25,7 +25,15 @@
     <style name="TitleFaDialgo" parent="Title">
         <item name="android:textColor">@color/RedDialog</item>
     </style>
+    <style name="bodyHeader" parent="Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
+    <style name="bodyItem" parent="Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
     <style name="FullScreenDialog">
         <item name="android:windowIsTranslucent">true</item>

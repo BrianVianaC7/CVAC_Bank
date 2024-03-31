@@ -2,10 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#99747F92</color>
     <color name="RedDialog">#FF8A7D</color>
     <color name="GreenDialog">#74E778</color>
     <color name="purple">#8552E1</color>
     <color name="purpleDark">#673AB7</color>
     <color name="pinkLight">#FDF2FD</color>
+    <color name="green">#17A14B</color>
+    <color name="yellow">#F2C146</color>
+    <color name="red">#FF4343</color>
 
 </resources>
