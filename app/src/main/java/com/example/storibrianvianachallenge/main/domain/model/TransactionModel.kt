@@ -5,7 +5,7 @@ import com.example.storibrianvianachallenge.main.data.network.response.Transacti
 
 data class TransactionModel(
     var detalle: String? = null,
-    var fecha: String? = null,
+    var fecha: Int? = null,
     var idTransaccion: String? = null,
     var importe: Double? = null,
     var iva: Double? = null,
@@ -13,7 +13,8 @@ data class TransactionModel(
     var referencia: String? = null,
     var tipo: String? = null,
     //SE AGREGA UNICAMENTE PARA EL MOVEMENTRESPONSE
-    var idMovimiento: Int? = null
+    var idMovimiento: Int? = null,
+    var fechaHora: String? = null
 )
 
 fun TransactionResponse.toDomain() = TransactionModel(detalle, fecha, idTransaccion, importe, iva, montoTotal, referencia, tipo)
@@ -23,5 +24,6 @@ fun MovementResponse.toDomain() = TransactionModel(
     fecha = this.fecha,
     idMovimiento = this.idmovimiento,
     montoTotal = this.montoTotal,
-    referencia = this.numeroReferencia
+    referencia = this.numeroReferencia,
+    fechaHora = this.fechaHora
 )

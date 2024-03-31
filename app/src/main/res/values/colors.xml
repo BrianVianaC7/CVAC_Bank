@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#99747F92</color>
+    <color name="grayLight">#75787B</color>
     <color name="RedDialog">#FF8A7D</color>
     <color name="GreenDialog">#74E778</color>
     <color name="purple">#8552E1</color>

@@ -185,7 +185,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getMovements() {
-        parentFragmentManager.let { homeViewModel.getMovements("lcbsP9GoLBfryFrVTIYYaXfnrS03", it) }
+        parentFragmentManager.let { homeViewModel.getMovements("8tw0Yz4F5OZounvCqZG4d0UPtjl2", it) }
     }
 
     private fun initLoader() {

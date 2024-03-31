@@ -9,10 +9,10 @@
     <LinearLayout
         android:id="@+id/lnHeader"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="180dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="24dp"
+        android:padding="10dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -39,6 +39,272 @@
             android:layout_marginTop="5dp"
             android:text="@string/pago"
             android:textColor="@color/gray" />
+
+        <TextView
+            android:id="@+id/tvFechaHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/gray"
+            tools:text="@string/date_nr"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lnBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnHeader">
+
+
+        <LinearLayout
+            android:id="@+id/lnTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtTLeyenda"
+                style="@style/bodyItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/id_transaccion" />
+
+            <TextView
+                android:id="@+id/tvTransaction"
+                style="@style/bodyItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="@string/reference" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnImporte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtILeyenda"
+                style="@style/bodyTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/importe" />
+
+            <TextView
+                android:id="@+id/tvImporte"
+                style="@style/bodyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="@string/saldo_cash" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnIva"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtIVLeyenda"
+                style="@style/bodyTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/iva" />
+
+            <TextView
+                android:id="@+id/tvIva"
+                style="@style/bodyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="@string/saldo_cash" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnMonto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtMLeyenda"
+                style="@style/bodyTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/total" />
+
+            <TextView
+                android:id="@+id/tvMontoTotal"
+                style="@style/bodyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="@string/saldo_cash" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnReferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtRLeyenda"
+                style="@style/bodyItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/referencia" />
+
+            <TextView
+                android:id="@+id/tvReferencia"
+                style="@style/bodyItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="@string/reference" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtDLeyenda"
+                style="@style/bodyTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/fecha" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/bodyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="@string/date" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txtTpLeyenda"
+                style="@style/bodyTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/tipo" />
+
+            <TextView
+                android:id="@+id/tvType"
+                style="@style/bodyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="@string/venta" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txtDtLeyenda"
+                style="@style/bodyItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/detalle" />
+
+            <TextView
+                android:id="@+id/tvDetail"
+                style="@style/bodyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                tools:text="@string/mv_detalle" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnShare"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center"
+                android:src="@drawable/ic_share"/>
+
+            <TextView
+                android:id="@+id/tvShare"
+                style="@style/share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/share" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class TransactionResponse(
     @SerializedName("detalle") var detalle: String? = null,
-    @SerializedName("fecha") var fecha: String? = null,
+    @SerializedName("fecha") var fecha: Int? = null,
     @SerializedName("id_transaccion") var idTransaccion: String? = null,
     @SerializedName("importe") var importe: Double? = null,
     @SerializedName("iva") var iva: Double? = null,

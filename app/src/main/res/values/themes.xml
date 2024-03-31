@@ -35,6 +35,15 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="bodyTicket" parent="bodyItem">
+        <item name="android:textColor">@color/grayLight</item>
+    </style>
+
+    <style name="share">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/purple</item>
+    </style>
+
     <style name="FullScreenDialog">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowContentOverlay">@null</item>

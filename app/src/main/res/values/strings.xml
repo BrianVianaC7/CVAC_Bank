@@ -31,5 +31,16 @@
     <string name="detail">Detalle de Movimiento</string>
     <string name="movimiento">Movimiento</string>
     <string name="pago">Pago</string>
+    <string name="id_transaccion">ID Transacción:</string>
+    <string name="importe">Importe:</string>
+    <string name="iva">IVA:</string>
+    <string name="total">Total:</string>
+    <string name="referencia">Referencia</string>
+    <string name="fecha">Fecha:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="venta">Venta</string>
+    <string name="detalle">Detalle:</string>
+    <string name="share">Compartir comprobante</string>
+    <string name="date_nr">07–05–2024</string>
 
 </resources>

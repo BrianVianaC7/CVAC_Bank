@@ -8,7 +8,7 @@ sealed class DetailMovementState {
 
     data class SuccessMovement(
         var detalle: String? = null,
-        var fecha: String? = null,
+        var fecha: Int? = null,
         var idTransaccion: String? = null,
         var importe: Double? = null,
         var iva: Double? = null,
