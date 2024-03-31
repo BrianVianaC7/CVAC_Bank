@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <dialog
         android:id="@+id/onFailureFragment"
-        android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnFailureFragment"
+        android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnFailureDialog"
         android:label="fragment_on_failure"
         tools:layout="@layout/fragment_on_failure" />
     <fragment
@@ -31,7 +31,7 @@
     </fragment>
     <dialog
         android:id="@+id/onSuccessFragment"
-        android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnSuccessFragment"
+        android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnSuccessDialog"
         android:label="fragment_on_success"
         tools:layout="@layout/fragment_on_success" />
     <fragment

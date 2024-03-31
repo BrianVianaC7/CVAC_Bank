@@ -2,7 +2,6 @@ package com.example.storibrianvianachallenge.common.ui.dialog
 
 import android.animation.Animator
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +11,11 @@ import android.view.animation.Animation
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import com.example.storibrianvianachallenge.R
-import com.example.storibrianvianachallenge.databinding.FragmentOnFailureBinding
 import com.example.storibrianvianachallenge.databinding.FragmentOnSuccessBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OnSuccessFragment(private val message: String) : DialogFragment() {
+class OnSuccessDialog(private val message: String) : DialogFragment() {
     private var _binding: FragmentOnSuccessBinding? = null
     private val binding get() = _binding!!
 

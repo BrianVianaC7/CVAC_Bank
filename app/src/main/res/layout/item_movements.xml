@@ -24,6 +24,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             tools:text="@string/date" />
+
+        <ImageView
+            android:id="@+id/btNext"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:src="@drawable/ic_arror_go" />
     </LinearLayout>
 
     <LinearLayout

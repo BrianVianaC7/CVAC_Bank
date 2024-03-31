@@ -19,5 +19,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
         binding.fragmentContainerView.isVisible = true
+        doLogout()
+    }
+
+    private fun doLogout() {
+        binding.ivLogout.setOnClickListener {
+            finish()
+        }
     }
 }

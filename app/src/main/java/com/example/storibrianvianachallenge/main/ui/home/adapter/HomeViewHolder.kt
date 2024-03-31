@@ -18,7 +18,7 @@ class HomeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val amount = "$ ${movement.montoTotal}"
             tvAmount.text = amount
             tvSubtitle.text = movement.referencia?.maskAsteriskNumber()
-            itemView.setOnClickListener { onItemsSelected(movement) }
+            btNext.setOnClickListener { onItemsSelected(movement) }
         }
     }
 }

@@ -15,7 +15,7 @@ import com.example.storibrianvianachallenge.databinding.FragmentOnFailureBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OnFailureFragment(private val message: String) : DialogFragment() {
+class OnFailureDialog(private val message: String) : DialogFragment() {
 
     private var _binding: FragmentOnFailureBinding? = null
     private val binding get() = _binding!!
