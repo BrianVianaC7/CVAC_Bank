@@ -131,10 +131,9 @@ class DetailMovementFragment : Fragment() {
     }
 
     private fun shareMovement() {
-        val bitmap =
-            Bitmap.createBitmap(binding.root.width, binding.root.height, Bitmap.Config.ARGB_8888)
+        val bitmap = Bitmap.createBitmap(binding.root.width, binding.root.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
-        binding.tvShare.isVisible = false
+        binding.lnShare.isVisible = false
         binding.root.draw(canvas)
 
         val uri = getImageUri(requireContext(), bitmap)
