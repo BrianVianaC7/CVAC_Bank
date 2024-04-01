@@ -41,6 +41,7 @@
     <string name="venta">Venta</string>
     <string name="detalle">Detalle:</string>
     <string name="share">Compartir comprobante</string>
+    <string name="requerido">requerido*</string>
     <string name="date_nr">07–05–2024</string>
 
 </resources>

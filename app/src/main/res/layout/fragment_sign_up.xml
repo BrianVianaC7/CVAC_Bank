@@ -24,7 +24,7 @@
         android:id="@+id/txNombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/nombre"
         app:counterEnabled="true"
         app:counterMaxLength="30"
@@ -48,7 +48,7 @@
         android:id="@+id/txApellido"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/apellido"
         app:counterEnabled="true"
         app:counterMaxLength="25"
@@ -73,7 +73,7 @@
         android:id="@+id/txEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/correo"
         app:counterEnabled="true"
         app:counterMaxLength="25"
@@ -97,7 +97,7 @@
         android:id="@+id/tvPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/contrasena"
         app:counterEnabled="true"
         app:counterMaxLength="15"
@@ -117,6 +117,65 @@
             android:maxLength="15" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:id="@+id/lnCamara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword">
+
+        <LinearLayout
+            android:id="@+id/lnFront"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivCamaraFront"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/ic_camera" />
+
+            <TextView
+                style="@style/share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/requerido" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnBack"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivCamaraBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/ic_camera" />
+
+            <TextView
+                style="@style/share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/requerido" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"
         android:layout_width="0dp"
@@ -126,7 +185,7 @@
         android:text="@string/crear_cuenta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+        app:layout_constraintTop_toBottomOf="@id/lnCamara" />
 
     <TextView
         android:id="@+id/tvForget"

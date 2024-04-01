@@ -14,6 +14,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.common.ui.dialog.OnFailureDialog
+import com.example.storibrianvianachallenge.common.ui.dialog.ScannerFragment
 import com.example.storibrianvianachallenge.databinding.FragmentSignUpBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -21,6 +22,8 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
 
+    private var scannedDataFront: String? = null
+    private var scannedDataBack: String? = null
     private val loginViewModel by viewModels<LoginViewModel>()
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
@@ -42,8 +45,11 @@ class SignUpFragment : Fragment() {
                 val apellido = etApellido.text.toString().trim()
                 val email = etEmail.text.toString().trim()
                 val password = etPassword.text.toString().trim()
+
                 if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                    showToast()
+                    showToast("Por favor, llene todos los campos.")
+                } else if (scannedDataFront == null || scannedDataBack == null) {
+                    showToast("Por favor, capture tanto la parte frontal como la trasera de su ID.")
                 } else {
                     loginViewModel.signUpWithEmailAndPassword(email, password, nombre, apellido)
                     binding.pbar.isVisible = true
@@ -88,6 +94,35 @@ class SignUpFragment : Fragment() {
         faiulureDialog.show(fragmentManager, "failure")
     }
 
+
+    private fun scannerCameraID() {
+        binding.apply {
+            lnFront.setOnClickListener {
+                val fragmentManager = childFragmentManager
+                val scannerDialogFront = ScannerFragment(
+                    type = "Captura de ID Frontal",
+                )
+                /*scannerDialogFront.setScannerResultListener { result ->
+                    scannedDataFront = result
+                }
+                 */
+                scannerDialogFront.show(fragmentManager, "scanner_front")
+            }
+            lnBack.setOnClickListener {
+                val fragmentManager = childFragmentManager
+                val scannerDialogBack = ScannerFragment(
+                    type = "Captura de ID Trasera",
+                )
+                /*
+                scannerDialogBack.setScannerResultListener { result ->
+                    scannedDataBack = result
+                }
+                 */
+                scannerDialogBack.show(fragmentManager, "scanner_back")
+            }
+        }
+    }
+
     private fun initNavigation() {
         binding.apply {
             tvForgetLogin.setOnClickListener {
@@ -96,8 +131,8 @@ class SignUpFragment : Fragment() {
         }
     }
 
-    private fun showToast() {
-        Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
+    private fun showToast(message: String?) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateView(
