@@ -44,4 +44,4 @@
 
   <hr>
 
-  <p>StoriApp tiene como objetivo proporcionar a los usuarios una experiencia bancaria fluida, priorizando la seguridad y la usabilidad. Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto con nosotros. ¡Feliz banca con StoriApp! 🚀📱</p>
+  <p>StoriApp ¡Feliz banca con StoriApp! 🚀📱</p>
