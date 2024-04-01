@@ -63,6 +63,7 @@
  <hr>
 
  <p>Registrarse</p>
+ <p>Scanner de Identificacion Oficial</p>
  <p>Acción exitosa</p>
  <p>Acción fallida</p>
 
