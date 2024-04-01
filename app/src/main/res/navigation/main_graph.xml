@@ -33,10 +33,14 @@
         android:id="@+id/onSuccessFragment"
         android:name="com.example.storibrianvianachallenge.common.ui.dialog.OnSuccessDialog"
         android:label="fragment_on_success"
-        tools:layout="@layout/fragment_on_success" />
+        tools:layout="@layout/fragment_on_success" >
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </dialog>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.storibrianvianachallenge.main.ui.signup.SignUpFragment"
+        android:name="com.example.storibrianvianachallenge.main.ui.login.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action

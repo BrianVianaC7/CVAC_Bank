@@ -10,14 +10,16 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.navArgs
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentOnSuccessBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OnSuccessDialog(private val message: String) : DialogFragment() {
+class OnSuccessDialog() : DialogFragment() {
     private var _binding: FragmentOnSuccessBinding? = null
     private val binding get() = _binding!!
+    private val args: OnSuccessDialogArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -54,7 +56,7 @@ class OnSuccessDialog(private val message: String) : DialogFragment() {
             override fun onAnimationStart(p0: Animation?) {
                 binding.apply {
                     animationView.isVisible = true
-                    tvSubTitle.text = message
+                    tvSubTitle.text = args.message
                 }
             }
 
@@ -67,7 +69,7 @@ class OnSuccessDialog(private val message: String) : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.FullScreenDialog)
+        setStyle(STYLE_NO_TITLE, R.style.FullScreenDialog)
     }
 
     override fun onCreateView(
