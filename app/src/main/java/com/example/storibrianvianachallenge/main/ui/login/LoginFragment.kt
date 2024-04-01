@@ -1,12 +1,15 @@
 package com.example.storibrianvianachallenge.main.ui.login
 
 import android.os.Bundle
+import android.text.InputFilter
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -16,6 +19,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.common.ui.dialog.OnFailureDialog
 import com.example.storibrianvianachallenge.databinding.FragmentLoginBinding
+import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -34,11 +38,7 @@ class LoginFragment : Fragment() {
         initUIState()
         initNavigation()
         initLogin()
-        //forgotPassword()
-    }
-
-    private fun forgotPassword() {
-        TODO("Not yet implemented")
+        forgotPassword()
     }
 
     private fun initUIState() {
@@ -64,6 +64,53 @@ class LoginFragment : Fragment() {
             } else {
                 loginViewModel.signInWithEmailAndPassword(email, password)
             }
+        }
+    }
+
+    private fun initUIForget() {
+        lifecycleScope.launch{
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                loginViewModel.stateForget.collect{
+                    when(it){
+                        is LoginState.Error -> errorLogin(it.error)
+                        LoginState.Loading -> loadingLogin()
+                        is LoginState.SuccessLogin -> succesForget(it.message)
+                    }
+                }
+            }
+        }
+    }
+    private fun forgotPassword() {
+        binding.tvForget.setOnClickListener {
+            initUIForget()
+            val editText =  TextInputEditText(requireContext()).apply {
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                )
+                maxLines = 1
+                filters = arrayOf<InputFilter>(InputFilter.LengthFilter(40))
+                hint = "Correo@electronico.com"
+            }
+            val dialog = AlertDialog.Builder(requireContext())
+                .setTitle("Restablecer contraseña")
+                .setMessage("Por favor, introduce tu correo electrónico:")
+                .setView(editText)
+                .setPositiveButton("Enviar") { dialog, _ ->
+                    val email = editText.text.toString().trim()
+                    if (email.isNotEmpty()) {
+                        loginViewModel.sendPasswordResetEmail(email)
+                    } else {
+                        showToast()
+                    }
+                    dialog.dismiss()
+                }
+                .setNegativeButton("Cancelar") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .create()
+
+            dialog.show()
         }
     }
 
@@ -94,6 +141,15 @@ class LoginFragment : Fragment() {
             message = message ?: "Ups, algo salio mal",
         )
         faiulureDialog.show(fragmentManager, "failure")
+    }
+
+    private fun succesForget(message: String?) {
+        binding.pbar.isVisible = false
+        findNavController().navigate(
+            LoginFragmentDirections.actionLoginFragmentToOnSuccessFragment(
+                message ?: "Usuario creado con éxito, espera a que se active tu cuenta"
+            )
+        )
     }
 
     private fun showToast() {

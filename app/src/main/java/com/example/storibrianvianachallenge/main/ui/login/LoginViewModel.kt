@@ -23,6 +23,9 @@ class LoginViewModel @Inject constructor() : ViewModel() {
     private var _state = MutableStateFlow<LoginState>(LoginState.Loading)
     val state: StateFlow<LoginState> get() = _state
 
+    private var _stateForget = MutableStateFlow<LoginState>(LoginState.Loading)
+    val stateForget: StateFlow<LoginState> get() = _stateForget
+
     fun signUpWithEmailAndPassword(
         email: String,
         password: String,
@@ -68,13 +71,22 @@ class LoginViewModel @Inject constructor() : ViewModel() {
                 if (task.isSuccessful) {
                     _state.value = LoginState.SuccessLogin(auth.currentUser?.uid ?: "")
                 } else {
-                    _state.value =
-                        LoginState.Error("Error al iniciar sesión")
+                    _state.value = LoginState.Error("Error al iniciar sesión")
                     Log.e("LoginViewModel", "Error: ${task.exception?.message}")
                 }
             }
     }
 
+    fun sendPasswordResetEmail(email: String) {
+        auth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    _stateForget.value = LoginState.SuccessLogin("Se ha enviado un correo electrónico para restablecer su contraseña.")
+                } else {
+                    _stateForget.value = LoginState.Error("Error al enviar el correo electrónico para restablecer la contraseña.")
+                }
+            }
+    }
 
     fun signOut() {
         auth.signOut()
