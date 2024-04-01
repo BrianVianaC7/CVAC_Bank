@@ -1,6 +1,7 @@
 package com.example.storibrianvianachallenge.main.ui.login
 
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -59,6 +60,24 @@ class LoginViewModel @Inject constructor() : ViewModel() {
                     _state.value = LoginState.Error("Ocurrió un problema al crear la cuenta")
                 }
             }
+    }
+
+    fun signInWithEmailAndPassword(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    _state.value = LoginState.SuccessLogin(auth.currentUser?.uid ?: "")
+                } else {
+                    _state.value =
+                        LoginState.Error("Error al iniciar sesión")
+                    Log.e("LoginViewModel", "Error: ${task.exception?.message}")
+                }
+            }
+    }
+
+
+    fun signOut() {
+        auth.signOut()
     }
 
 

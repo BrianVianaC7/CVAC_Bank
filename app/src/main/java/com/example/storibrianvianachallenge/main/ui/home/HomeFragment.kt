@@ -19,6 +19,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentHomeBinding
@@ -33,6 +34,7 @@ class HomeFragment : Fragment() {
 
     private var pointerPosition: Float = 0f
     var canSwipe = false
+    private val args: HomeFragmentArgs by navArgs()
     private lateinit var movementAdapter: HomeAdapter
     private val homeViewModel by viewModels<HomeViewModel>()
     private var _binding: FragmentHomeBinding? = null
@@ -179,13 +181,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun getBalance() {
-        parentFragmentManager.let { homeViewModel.getBalance("8tw0Yz4F5OZounvCqZG4d0UPtjl2", it) }
+        parentFragmentManager.let { homeViewModel.getBalance(args.userId, it) }
         homeViewModel.balance.value.saldoMonto?.let { updatePointerPosition(it) }
 
     }
 
     private fun getMovements() {
-        parentFragmentManager.let { homeViewModel.getMovements("8tw0Yz4F5OZounvCqZG4d0UPtjl2", it) }
+        parentFragmentManager.let { homeViewModel.getMovements(args.userId, it) }
     }
 
     private fun initLoader() {

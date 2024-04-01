@@ -10,6 +10,7 @@ import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentOnSuccessBinding
@@ -32,8 +33,8 @@ class OnSuccessDialog : DialogFragment() {
 
     private fun initUI() {
         showLottieAnimation()
+        initNavigation()
     }
-
 
     private fun showLottieAnimation() {
         initLottieTransition()
@@ -64,6 +65,12 @@ class OnSuccessDialog : DialogFragment() {
             override fun onAnimationRepeat(p0: Animation?) {}
         })
         binding.animationView.startAnimation(appearAnimation)
+    }
+
+    private fun initNavigation() {
+        binding.tvDismiss.setOnClickListener {
+            findNavController().navigate(R.id.action_onSuccessFragment_to_loginFragment)
+        }
     }
 
 

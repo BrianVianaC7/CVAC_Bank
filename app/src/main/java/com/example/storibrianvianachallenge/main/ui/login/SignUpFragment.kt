@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -41,7 +42,12 @@ class SignUpFragment : Fragment() {
                 val apellido = etApellido.text.toString().trim()
                 val email = etEmail.text.toString().trim()
                 val password = etPassword.text.toString().trim()
-                loginViewModel.signUpWithEmailAndPassword(email, password, nombre, apellido)
+                if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                    showToast("Por favor, completa todos los campos")
+                } else {
+                    loginViewModel.signUpWithEmailAndPassword(email, password, nombre, apellido)
+                    binding.pbar.isVisible = true
+                }
             }
         }
     }
@@ -61,7 +67,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun loadingSignUo() {
-        binding.pbar.isVisible = true
+        binding.pbar.isVisible = false
     }
 
     private fun succesSignUp(message: String?) {
@@ -88,6 +94,10 @@ class SignUpFragment : Fragment() {
                 findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
             }
         }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateView(
