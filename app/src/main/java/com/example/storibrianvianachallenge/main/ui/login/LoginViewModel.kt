@@ -47,7 +47,7 @@ class LoginViewModel @Inject constructor() : ViewModel() {
                                     "correo" to email
                                 )
                                 userRef.setValue(userData)
-                                _state.value = LoginState.SuccessLogin("Usuario creado con éxito")
+                                _state.value = LoginState.SuccessLogin("Usuario creado con éxito, espera a que se active tu cuenta")
                             }
                         }
 

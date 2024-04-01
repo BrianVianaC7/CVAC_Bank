@@ -90,6 +90,7 @@ class DetailMovementFragment : Fragment() {
 
             lnShare.setOnClickListener {
                 requestStoragePermission()
+                lnShare.isVisible = true
             }
         }
 

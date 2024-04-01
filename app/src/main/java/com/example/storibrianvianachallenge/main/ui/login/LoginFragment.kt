@@ -60,7 +60,7 @@ class LoginFragment : Fragment() {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
             if (email.isEmpty() || password.isEmpty()) {
-                showToast("Por favor, completa todos los campos")
+                showToast()
             } else {
                 loginViewModel.signInWithEmailAndPassword(email, password)
             }
@@ -96,8 +96,8 @@ class LoginFragment : Fragment() {
         faiulureDialog.show(fragmentManager, "failure")
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    private fun showToast() {
+        Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateView(

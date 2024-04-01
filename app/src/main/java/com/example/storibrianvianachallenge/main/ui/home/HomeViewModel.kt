@@ -37,7 +37,7 @@ class HomeViewModel @Inject constructor(
                 _balance.value = balanceFromApi
             } catch (e: Exception) {
                 Log.e("BalanceError", "Error al obtener el saldo: ${e.message}")
-                val failureFragment = OnFailureDialog("Error al obtener el saldo")
+                val failureFragment = OnFailureDialog("Error al obtener el saldo. Espere a que se actualice")
                 failureFragment.show(fragmentManager, "failureFragment")
             } finally {
                 _isLoading.value = false
@@ -53,7 +53,7 @@ class HomeViewModel @Inject constructor(
                 _movements.value = movementsFromApi
             } catch (e: Exception) {
                 Log.e("MovementsError", "Error al obtener los movimientos: ${e.message}")
-                val failureFragment = OnFailureDialog("Error al obtener los movimientos")
+                val failureFragment = OnFailureDialog("Error al obtener los movimientos. Espere a que se actualice")
                 failureFragment.show(fragmentManager, "failureFragment")
             } finally {
                 _isLoading.value = false

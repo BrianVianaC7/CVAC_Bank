@@ -1,18 +1,17 @@
 package com.example.storibrianvianachallenge.main.ui.home
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.activity.addCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -177,20 +176,30 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun doLogout(){
+    private fun doLogout() {
         val logout = activity?.findViewById<ImageView>(R.id.ivLogout)
         logout?.setOnClickListener {
-            loginViewModel.signOut()
-            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Cerrar sesión")
+            builder.setMessage("¿Estás seguro de que deseas cerrar sesión?")
+            builder.setPositiveButton("Sí") { dialog, which ->
+                loginViewModel.signOut()
+                findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+            }
+            builder.setNegativeButton("No") { dialog, which ->
+                dialog.dismiss()
+            }
+            builder.show()
         }
     }
+
 
     private fun initToolbar() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         val toolbar = activity?.findViewById<ImageView>(R.id.ivLogout)
         toolbar?.visibility = View.VISIBLE
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-           //Bloquear que regrese
+            //Bloquear que regrese
         }
     }
 

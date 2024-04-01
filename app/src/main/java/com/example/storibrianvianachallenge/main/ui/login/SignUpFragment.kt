@@ -43,7 +43,7 @@ class SignUpFragment : Fragment() {
                 val email = etEmail.text.toString().trim()
                 val password = etPassword.text.toString().trim()
                 if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                    showToast("Por favor, completa todos los campos")
+                    showToast()
                 } else {
                     loginViewModel.signUpWithEmailAndPassword(email, password, nombre, apellido)
                     binding.pbar.isVisible = true
@@ -74,7 +74,7 @@ class SignUpFragment : Fragment() {
         binding.pbar.isVisible = false
         findNavController().navigate(
             SignUpFragmentDirections.actionSignUpFragmentToOnSuccessFragment(
-                message ?: "Usuario creado con exito"
+                message ?: "Usuario creado con éxito, espera a que se active tu cuenta"
             )
         )
     }
@@ -96,8 +96,8 @@ class SignUpFragment : Fragment() {
         }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    private fun showToast() {
+        Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreateView(
