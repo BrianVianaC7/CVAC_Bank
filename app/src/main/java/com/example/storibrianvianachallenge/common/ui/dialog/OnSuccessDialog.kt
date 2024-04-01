@@ -16,7 +16,7 @@ import com.example.storibrianvianachallenge.databinding.FragmentOnSuccessBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OnSuccessDialog() : DialogFragment() {
+class OnSuccessDialog : DialogFragment() {
     private var _binding: FragmentOnSuccessBinding? = null
     private val binding get() = _binding!!
     private val args: OnSuccessDialogArgs by navArgs()

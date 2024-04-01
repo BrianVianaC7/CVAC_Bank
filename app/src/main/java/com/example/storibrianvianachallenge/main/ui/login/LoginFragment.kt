@@ -23,9 +23,9 @@ class LoginFragment : Fragment() {
     }
 
     private fun initUI() {
-        //initUIState()
+        initUIState()
         initNavigation()
-       // forgotPassword()
+        forgotPassword()
     }
 
     private fun forgotPassword() {
@@ -40,9 +40,6 @@ class LoginFragment : Fragment() {
         binding.apply {
             btnSignUp.setOnClickListener {
                 findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
-            }
-            btnLogin.setOnClickListener {
-                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
             }
         }
     }

@@ -59,6 +59,7 @@ android {
 
 }
 
+//noinspection UseTomlInstead
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")

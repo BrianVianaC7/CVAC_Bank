@@ -6,10 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import androidx.annotation.RawRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.ActivitySplashBinding
 import com.example.storibrianvianachallenge.main.ui.MainActivity
 
