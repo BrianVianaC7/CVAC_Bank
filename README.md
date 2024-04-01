@@ -25,7 +25,7 @@
     <p>Los datos de usuario se almacenan en la base de datos en tiempo real de Firebase. Las fotos de identificación se guardan en Firebase Storage, asegurando un almacenamiento seguro y accesible. Además, los servicios en la nube se crean y consumen utilizando Firebase RealTime Database.</p>
 
   <h2>Arquitectura</h2>
-    <p>StoriApp sigue la arquitectura MVVM (Modelo-Vista-Modelo de Vista) junto con los principios de Arquitectura Limpia para garantizar la separación de preocupaciones y la mantenibilidad.</p>
+    <p>StoriApp sigue la arquitectura MVVM (Modelo-Vista-Modelo de Vista) junto con los principios de Clean Architecture para garantizar la separación de preocupaciones y la mantenibilidad.</p>
 
   <h2>Bibliotecas Utilizadas</h2>
     <p>StoriApp utiliza varias bibliotecas:</p>
@@ -40,7 +40,7 @@
     </ol>
 
   <h2>Criterios de Evaluación</h2>
-    <p>El desarrollo de StoriApp se adhiere a los siguientes criterios: Implementación de los principios SOLID y prácticas de Código Limpio, Utilización de la arquitectura MVVM, Diseño organizado y estructurado del proyecto, e Implementación funcional que cumple con los requisitos especificados.</p>
+    <p>El desarrollo de StoriApp se adhiere a los siguientes criterios: Implementación de los principios SOLID y prácticas de Código Limpio, Clean Architecture,  Utilización de la arquitectura MVVM, Diseño organizado y estructurado del proyecto, e Implementación funcional que cumple con los requisitos especificados.</p>
 
   <hr>
 
