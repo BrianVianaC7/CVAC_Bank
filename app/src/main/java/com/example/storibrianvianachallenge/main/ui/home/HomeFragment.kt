@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -24,6 +25,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentHomeBinding
 import com.example.storibrianvianachallenge.main.ui.home.adapter.HomeAdapter
+import com.example.storibrianvianachallenge.main.ui.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import java.util.Timer
@@ -37,6 +39,7 @@ class HomeFragment : Fragment() {
     private val args: HomeFragmentArgs by navArgs()
     private lateinit var movementAdapter: HomeAdapter
     private val homeViewModel by viewModels<HomeViewModel>()
+    private val loginViewModel by viewModels<LoginViewModel>()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,6 +60,7 @@ class HomeFragment : Fragment() {
         initRecyclerView()
         initSwipeRefresh()
         initToolbar()
+        doLogout()
     }
 
     private fun initBalanceUIState() {
@@ -125,7 +129,6 @@ class HomeFragment : Fragment() {
 
     private fun initSwipeRefresh() {
         binding.apply {
-            initScrollActionSwipe()
             swipeRefresh.setColorSchemeResources(R.color.purple)
             swipeRefresh.setOnRefreshListener {
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -148,36 +151,6 @@ class HomeFragment : Fragment() {
                 canSwipe = false
             }
         }, 30000, 30000)
-    }
-
-    @SuppressLint("ClickableViewAccessibility")
-    private fun initScrollActionSwipe() {
-        var initialY = 0f
-        val scale = 0.4f
-
-        binding.swipeRefresh.setOnTouchListener { _, motionEvent ->
-            when (motionEvent.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    initialY = motionEvent.y
-                }
-
-                MotionEvent.ACTION_MOVE -> {
-                    val deltaY = (motionEvent.y - initialY) * scale
-                    Log.e("valorInicial", "$initialY")
-                    if (deltaY > 0) {
-                        binding.rvMovements.translationY += deltaY
-                        binding.isEmptyOperations.translationY += deltaY
-                    }
-                    initialY = motionEvent.y
-                }
-
-                MotionEvent.ACTION_UP -> {
-                    binding.rvMovements.translationY = 0f
-                    binding.isEmptyOperations.translationY = 0f
-                }
-            }
-            false
-        }
     }
 
     private fun getBalance() {
@@ -204,10 +177,21 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun doLogout(){
+        val logout = activity?.findViewById<ImageView>(R.id.ivLogout)
+        logout?.setOnClickListener {
+            loginViewModel.signOut()
+            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+        }
+    }
+
     private fun initToolbar() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         val toolbar = activity?.findViewById<ImageView>(R.id.ivLogout)
         toolbar?.visibility = View.VISIBLE
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+           //Bloquear que regrese
+        }
     }
 
     override fun onCreateView(

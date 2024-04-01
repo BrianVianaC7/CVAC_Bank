@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -46,8 +47,8 @@ class LoginFragment : Fragment() {
                 loginViewModel.state.collect {
                     when (it) {
                         is LoginState.Error -> errorLogin(it.error)
-                        LoginState.Loading -> loadingSignUo()
-                        is LoginState.SuccessLogin -> succesSignUp(it.message)
+                        LoginState.Loading -> loadingLogin()
+                        is LoginState.SuccessLogin -> succesLogin(it.message)
                     }
                 }
             }
@@ -72,13 +73,16 @@ class LoginFragment : Fragment() {
                 findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
             }
         }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            activity?.finish()
+        }
     }
 
-    private fun loadingSignUo() {
+    private fun loadingLogin() {
         binding.pbar.isVisible = false
     }
 
-    private fun succesSignUp(userId: String?) {
+    private fun succesLogin(userId: String?) {
         binding.pbar.isVisible = false
         findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment(userId!!))
     }

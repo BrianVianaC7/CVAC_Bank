@@ -24,15 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
         binding.fragmentContainerView.isVisible = true
-        //doLogout()
-    }
-
-    private fun doLogout() {
-        binding.ivLogout.setOnClickListener {
-            logout()
-            val navController = findNavController(R.id.fragmentContainerView)
-            navController.navigate(R.id.loginFragment)
-        }
     }
 
     private fun logout() {
