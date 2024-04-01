@@ -45,3 +45,59 @@
   <hr>
 
   <p>StoriApp ¡Feliz banca con StoriApp! 🚀📱</p>
+
+<h2>Flujo del App</h2>
+
+ <p>Splash</p>
+
+<hr>
+
+ <p>Login</p>
+
+<hr>
+
+ <p>Recuperar contraseña</p>
+ <p>Acción exitosa</p>
+ <p>Acción fallida</p>
+
+ <hr>
+
+ <p>Registrarse</p>
+ <p>Acción exitosa</p>
+ <p>Acción fallida</p>
+
+ <hr>
+
+ <p>Inicio</p>
+
+ <hr>
+
+ <p>Inicio sin saldo</p>
+
+ <hr>
+
+ <p>Inicio sin Movimientos</p>
+
+ <hr>
+
+ <p>Detalle de Movimiento</p>
+ <p>Compartir comprobante</p>
+
+ <hr>
+ 
+ <p>Cerrar sesión</p>
+
+ <hr>
+ 
+ 
+ 
+
+
+
+
+
+ 
+
+
+
+
