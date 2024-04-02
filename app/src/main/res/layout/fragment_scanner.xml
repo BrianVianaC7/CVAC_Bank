@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#80000000"
     tools:context=".common.ui.dialog.ScannerFragment">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewScanner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black_alpha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/centerRectangle"
@@ -19,13 +28,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
+    <View
+        android:id="@+id/backgroundBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black_alpha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/centerRectangle"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/backgroundTop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black_alpha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/centerRectangle"/>
+
     <TextView
         android:id="@+id/tvMessage"
         style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/centerRectangle"
@@ -35,37 +64,27 @@
         android:id="@+id/ivCamareRound"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/background_transparent"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="20dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_camera_round"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMessage" />
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        app:tint="@color/white" />
 
 
     <ImageButton
         android:id="@+id/ivCamareFlash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_transparent"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="20dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_flash_active"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <androidx.camera.view.PreviewView
-        android:id="@+id/cameraPreview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

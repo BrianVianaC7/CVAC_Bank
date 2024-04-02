@@ -36,6 +36,7 @@ class SignUpFragment : Fragment() {
         initUIState()
         initSignUp()
         initNavigation()
+        scannerCameraID()
     }
 
     private fun initSignUp() {
@@ -97,7 +98,7 @@ class SignUpFragment : Fragment() {
 
     private fun scannerCameraID() {
         binding.apply {
-            lnFront.setOnClickListener {
+            ivCamaraFront.setOnClickListener {
                 val fragmentManager = childFragmentManager
                 val scannerDialogFront = ScannerFragment(
                     type = "Captura de ID Frontal",
@@ -108,7 +109,7 @@ class SignUpFragment : Fragment() {
                  */
                 scannerDialogFront.show(fragmentManager, "scanner_front")
             }
-            lnBack.setOnClickListener {
+            ivCamaraBack.setOnClickListener {
                 val fragmentManager = childFragmentManager
                 val scannerDialogBack = ScannerFragment(
                     type = "Captura de ID Trasera",
