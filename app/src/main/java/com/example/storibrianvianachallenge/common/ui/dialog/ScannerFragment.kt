@@ -21,12 +21,17 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
+import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import com.example.storibrianvianachallenge.R
 import com.example.storibrianvianachallenge.databinding.FragmentOnSuccessBinding
 import com.example.storibrianvianachallenge.databinding.FragmentScannerBinding
+import com.example.storibrianvianachallenge.main.ui.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -38,9 +43,11 @@ class ScannerFragment(private val type: String) : DialogFragment() {
     companion object {
         private const val CAMERA_PERMISSION = android.Manifest.permission.CAMERA
     }
+
     private var isFlashOn = false
     private lateinit var camera: Camera
-
+    private var imageCapture: ImageCapture? = null
+    private val viewModel by viewModels<LoginViewModel>()
     private var _binding: FragmentScannerBinding? = null
     private val binding get() = _binding!!
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -67,7 +74,65 @@ class ScannerFragment(private val type: String) : DialogFragment() {
     }
 
     private fun takePhoto() {
-        Toast.makeText(context, "tomando foto", Toast.LENGTH_SHORT).show()
+        val imageCapture = imageCapture ?: return
+
+        val photoFile = File.createTempFile(
+            "photo",
+            ".jpg",
+            requireContext().externalCacheDir
+        )
+
+        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
+
+        imageCapture.takePicture(
+            outputOptions,
+            ContextCompat.getMainExecutor(requireContext()),
+            object : ImageCapture.OnImageSavedCallback {
+                override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
+                    showPhotoPreview(photoFile)
+                }
+
+                override fun onError(exception: ImageCaptureException) {
+                    Log.e("Camera", "Error al tomar foto: ${exception.message}", exception)
+                }
+            }
+        )
+    }
+
+    private fun showPhotoPreview(photoFile: File) {
+        binding.viewScanner.visibility = View.GONE
+        binding.ivPreview.visibility = View.VISIBLE
+        binding.ivCamareRound.visibility = View.GONE
+        binding.ivCamareAccept.visibility = View.VISIBLE
+        binding.ivCamareReject.visibility = View.VISIBLE
+
+
+        binding.ivPreview.setImageURI(photoFile.toUri())
+
+        binding.ivPreview.alpha = 0f
+        binding.ivPreview.animate()
+            .alpha(1f)
+            .setDuration(300)
+            .setListener(null)
+
+        binding.ivCamareAccept.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.savePhoto(photoFile.toUri())
+            }
+        }
+
+        viewModel.downloadUrl.observe(viewLifecycleOwner) { downloadUrl ->
+            if (!downloadUrl.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "Foto guardada en Firebase Storage", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "Error al guardar la foto", Toast.LENGTH_SHORT).show()
+            }
+            dismiss()
+        }
+
+        binding.ivCamareReject.setOnClickListener {
+            restartCamera()
+        }
     }
 
     private fun toggleFlash() {
@@ -82,6 +147,15 @@ class ScannerFragment(private val type: String) : DialogFragment() {
         }
     }
 
+    private fun restartCamera() {
+        binding.viewScanner.visibility = View.VISIBLE
+        binding.ivCamareRound.visibility = View.VISIBLE
+        binding.ivPreview.visibility = View.GONE
+        binding.ivCamareAccept.visibility = View.GONE
+        binding.ivCamareReject.visibility = View.GONE
+        startCamera()
+    }
+
     private fun startCamera() {
         binding.tvMessage.text = type
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
@@ -93,7 +167,7 @@ class ScannerFragment(private val type: String) : DialogFragment() {
                     it.setSurfaceProvider(binding.viewScanner.surfaceProvider)
                 }
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-            val imageCapture = ImageCapture.Builder().build()
+            imageCapture = ImageCapture.Builder().build()
 
             try {
                 cameraProvider.unbindAll()

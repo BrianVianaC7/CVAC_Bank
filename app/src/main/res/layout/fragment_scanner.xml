@@ -16,6 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/ivPreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/border_scanner_id"
+        android:visibility="gone"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="@id/centerRectangle"
+        app:layout_constraintBottom_toBottomOf="@id/centerRectangle"
+        app:layout_constraintStart_toStartOf="@id/centerRectangle"
+        app:layout_constraintEnd_toEndOf="@id/centerRectangle"/>
+
     <View
         android:id="@+id/centerRectangle"
         android:layout_width="match_parent"
@@ -71,6 +83,36 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        app:tint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/ivCamareAccept"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        android:src="@drawable/ic_accept"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivCamareReject"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        app:tint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/ivCamareReject"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="20dp"
+        android:visibility="invisible"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_return"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivCamareAccept"
         app:layout_constraintTop_toBottomOf="@id/tvMessage"
         app:tint="@color/white" />
 

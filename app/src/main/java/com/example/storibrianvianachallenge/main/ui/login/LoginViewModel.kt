@@ -1,7 +1,10 @@
 package com.example.storibrianvianachallenge.main.ui.login
 
 
+import android.net.Uri
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -10,9 +13,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 @HiltViewModel
@@ -20,6 +27,9 @@ class LoginViewModel @Inject constructor() : ViewModel() {
 
     private val auth: FirebaseAuth by lazy { Firebase.auth }
     private val database = Firebase.database.reference
+    private val storage: FirebaseStorage by lazy { Firebase.storage }
+    private val _downloadUrl = MutableLiveData<String?>()
+    val downloadUrl: LiveData<String?> get() = _downloadUrl
     private var _state = MutableStateFlow<LoginState>(LoginState.Loading)
     val state: StateFlow<LoginState> get() = _state
 
@@ -50,7 +60,8 @@ class LoginViewModel @Inject constructor() : ViewModel() {
                                     "correo" to email
                                 )
                                 userRef.setValue(userData)
-                                _state.value = LoginState.SuccessLogin("Usuario creado con éxito, espera a que se active tu cuenta")
+                                _state.value =
+                                    LoginState.SuccessLogin("Usuario creado con éxito, espera a que se active tu cuenta")
                             }
                         }
 
@@ -81,9 +92,11 @@ class LoginViewModel @Inject constructor() : ViewModel() {
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    _stateForget.value = LoginState.SuccessLogin("Se ha enviado un correo electrónico para restablecer su contraseña.")
+                    _stateForget.value =
+                        LoginState.SuccessLogin("Se ha enviado un correo electrónico para restablecer su contraseña.")
                 } else {
-                    _stateForget.value = LoginState.Error("Error al enviar el correo electrónico para restablecer la contraseña.")
+                    _stateForget.value =
+                        LoginState.Error("Error al enviar el correo electrónico para restablecer la contraseña.")
                 }
             }
     }
@@ -93,4 +106,19 @@ class LoginViewModel @Inject constructor() : ViewModel() {
     }
 
 
+    //ASIGNAMOS LA URI QUE NOS DA STORAGE Y LA GUARDAMOS DENTRO DEL NODO DE USAURIOS
+    suspend fun savePhoto(photoUri: Uri) {
+        val storageRef: StorageReference = storage.reference
+
+        val photoRef = storageRef.child("photos").child("Photo_${System.currentTimeMillis()}.jpg")
+
+        try {
+            photoRef.putFile(photoUri).await()
+            val url = photoRef.downloadUrl.await().toString()
+            _downloadUrl.postValue(url)
+        } catch (e: Exception) {
+            Log.e("LoginViewModel", "Error al guardar la foto en Firebase Storage: ${e.message}", e)
+            _downloadUrl.postValue(null)
+        }
+    }
 }
