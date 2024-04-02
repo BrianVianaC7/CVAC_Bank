@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class ScannerFragment(type: String) : DialogFragment() {
+class ScannerFragment(private val type: String ) : DialogFragment() {
 
     private var _binding: FragmentScannerBinding? = null
     private val binding get() = _binding!!
@@ -29,7 +29,13 @@ class ScannerFragment(type: String) : DialogFragment() {
     }
 
     private fun initUI() {
-        TODO("Not yet implemented")
+        initCamera()
+    }
+
+    private fun initCamera() {
+        binding.apply {
+            tvMessage.text = type
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

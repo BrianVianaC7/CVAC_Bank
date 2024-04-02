@@ -9,14 +9,63 @@
 
     <View
         android:id="@+id/centerRectangle"
-        android:layout_width="400dp"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/border_scanner_id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        tools:background="@color/white"/>
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/centerRectangle"
+        tools:text="@string/detail" />
+
+    <ImageButton
+        android:id="@+id/ivCamareRound"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/background_transparent"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_camera_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage" />
+
+
+    <ImageButton
+        android:id="@+id/ivCamareFlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_transparent"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_flash_active"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

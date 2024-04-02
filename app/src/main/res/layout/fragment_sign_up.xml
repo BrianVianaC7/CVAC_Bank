@@ -134,10 +134,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/ivCamaraFront"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_transparent"
                 android:gravity="center"
                 android:padding="10dp"
                 android:src="@drawable/ic_camera" />
@@ -157,10 +158,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/ivCamaraBack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_transparent"
                 android:gravity="center"
                 android:padding="10dp"
                 android:src="@drawable/ic_camera" />
