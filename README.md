@@ -7,6 +7,10 @@
         <li>Registro de Usuario</li>
         <li>Inicio de Sesión de Usuario</li>
         <li>Información Bancaria</li>
+         <ul>
+             <li>Saldo Bancario</li>
+             <li>Movimientos Bancarios</li>
+         </ul>
         <li>Detalles de Transacción</li>
     </ul>
 
