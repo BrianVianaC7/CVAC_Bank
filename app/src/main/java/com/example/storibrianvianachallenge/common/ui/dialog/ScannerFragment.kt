@@ -2,6 +2,8 @@ package com.example.storibrianvianachallenge.common.ui.dialog
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -38,11 +40,14 @@ import java.util.concurrent.Executors
 
 
 @AndroidEntryPoint
-class ScannerFragment(private val type: String) : DialogFragment() {
+class ScannerFragment(private val type: String, private val isFront: Boolean) : DialogFragment() {
 
     companion object {
         private const val CAMERA_PERMISSION = android.Manifest.permission.CAMERA
     }
+
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
 
     private var isFlashOn = false
     private lateinit var camera: Camera
@@ -57,6 +62,8 @@ class ScannerFragment(private val type: String) : DialogFragment() {
             WindowManager.LayoutParams.FLAG_SECURE
         )
         initUI()
+        sharedPreferences = requireContext().getSharedPreferences("nombre_pref", Context.MODE_PRIVATE)
+        editor = sharedPreferences.edit()
     }
 
     private fun initUI() {
@@ -117,13 +124,26 @@ class ScannerFragment(private val type: String) : DialogFragment() {
 
         binding.ivCamareAccept.setOnClickListener {
             lifecycleScope.launch {
-                viewModel.savePhoto(photoFile.toUri())
+                viewModel.savePhoto(photoFile.toUri(), isFront )
             }
         }
 
-        viewModel.downloadUrl.observe(viewLifecycleOwner) { downloadUrl ->
+        viewModel.downloadUrlFront.observe(viewLifecycleOwner) { downloadUrl ->
             if (!downloadUrl.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "Foto guardada en Firebase Storage", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Foto frotal guardada en Firebase Storage", Toast.LENGTH_SHORT).show()
+                editor.putString("claveF", downloadUrl)
+                editor.apply()
+            } else {
+                Toast.makeText(requireContext(), "Error al guardar la foto", Toast.LENGTH_SHORT).show()
+            }
+            dismiss()
+        }
+
+        viewModel.downloadUrlBack.observe(viewLifecycleOwner) { downloadUrl ->
+            if (!downloadUrl.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "Foto trasera guardada en Firebase Storage", Toast.LENGTH_SHORT).show()
+                editor.putString("claveB", downloadUrl)
+                editor.apply()
             } else {
                 Toast.makeText(requireContext(), "Error al guardar la foto", Toast.LENGTH_SHORT).show()
             }

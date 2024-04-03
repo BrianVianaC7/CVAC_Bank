@@ -28,8 +28,11 @@ class LoginViewModel @Inject constructor() : ViewModel() {
     private val auth: FirebaseAuth by lazy { Firebase.auth }
     private val database = Firebase.database.reference
     private val storage: FirebaseStorage by lazy { Firebase.storage }
-    private val _downloadUrl = MutableLiveData<String?>()
-    val downloadUrl: LiveData<String?> get() = _downloadUrl
+    private val _downloadUrlFront = MutableLiveData<String?>()
+    val downloadUrlFront: LiveData<String?> get() = _downloadUrlFront
+
+    private val _downloadUrlBack = MutableLiveData<String?>()
+    val downloadUrlBack: LiveData<String?> get() = _downloadUrlBack
     private var _state = MutableStateFlow<LoginState>(LoginState.Loading)
     val state: StateFlow<LoginState> get() = _state
 
@@ -40,7 +43,9 @@ class LoginViewModel @Inject constructor() : ViewModel() {
         email: String,
         password: String,
         nombre: String,
-        apellido: String
+        apellido: String,
+        uriFront: String?,
+        uriBack: String?
     ) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
@@ -57,11 +62,13 @@ class LoginViewModel @Inject constructor() : ViewModel() {
                                 val userData = hashMapOf(
                                     "nombre" to nombre,
                                     "apellido" to apellido,
-                                    "correo" to email
+                                    "correo" to email,
+                                    "uri_front" to uriFront,
+                                    "uri_back" to uriBack
                                 )
                                 userRef.setValue(userData)
                                 _state.value =
-                                    LoginState.SuccessLogin("Usuario creado con éxito, espera a que se active tu cuenta")
+                                    LoginState.SuccessLogin("Usuario creado con éxito, Para Activar su cuenta espere el proceso de verificación")
                             }
                         }
 
@@ -107,7 +114,7 @@ class LoginViewModel @Inject constructor() : ViewModel() {
 
 
     //ASIGNAMOS LA URI QUE NOS DA STORAGE Y LA GUARDAMOS DENTRO DEL NODO DE USAURIOS
-    suspend fun savePhoto(photoUri: Uri) {
+    suspend fun savePhoto(photoUri: Uri, isFrontCamera: Boolean) {
         val storageRef: StorageReference = storage.reference
 
         val photoRef = storageRef.child("photos").child("Photo_${System.currentTimeMillis()}.jpg")
@@ -115,10 +122,19 @@ class LoginViewModel @Inject constructor() : ViewModel() {
         try {
             photoRef.putFile(photoUri).await()
             val url = photoRef.downloadUrl.await().toString()
-            _downloadUrl.postValue(url)
+
+            if (isFrontCamera) {
+                _downloadUrlFront.postValue(url)
+            } else {
+                _downloadUrlBack.postValue(url)
+            }
         } catch (e: Exception) {
             Log.e("LoginViewModel", "Error al guardar la foto en Firebase Storage: ${e.message}", e)
-            _downloadUrl.postValue(null)
+            if (isFrontCamera) {
+                _downloadUrlFront.postValue(null)
+            } else {
+                _downloadUrlBack.postValue(null)
+            }
         }
     }
 }
