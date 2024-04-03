@@ -11,7 +11,10 @@
              <li>Saldo Bancario</li>
              <li>Movimientos Bancarios</li>
          </ul>
-        <li>Detalles de Transacción</li>
+        <li>Detalles de Movimiento</li>
+        <ul>
+             <li>Compartir Comprobante</li>
+         </ul>
     </ul>
 
   <h2>Proceso de Introducción</h2>
