@@ -26,8 +26,8 @@ class SignUpFragment : Fragment() {
 
     private var capturedUriFront: String? = null
     private var capturedUriBack: String? = null
-    private var isCapturedF = false
-    private var isCapturedB = false
+    private var isCapturedF = true
+    private var isCapturedB = true
     private val loginViewModel by viewModels<LoginViewModel>()
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
@@ -44,6 +44,8 @@ class SignUpFragment : Fragment() {
     }
 
     private fun initSignUp() {
+        capturedUriFront = null
+        capturedUriBack = null
         binding.apply {
             btnSignUp.setOnClickListener {
                 resultScannerID()
@@ -52,7 +54,7 @@ class SignUpFragment : Fragment() {
                 val email = etEmail.text.toString().trim()
                 val password = etPassword.text.toString().trim()
 
-                if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty() || !isCapturedF || !isCapturedB) {
+                if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty() || isCapturedF || isCapturedB) {
                     showToast("Por favor, llene todos los campos.")
                 } else {
                     loginViewModel.signUpWithEmailAndPassword(
@@ -65,8 +67,6 @@ class SignUpFragment : Fragment() {
                     )
                     binding.pbar.isVisible = true
                 }
-                isCapturedF = false
-                isCapturedB = false
             }
         }
     }
@@ -97,6 +97,10 @@ class SignUpFragment : Fragment() {
                     ?: "Usuario creado con éxito, espera a que se active tu cuenta, para activarla espere el proceso de verificación"
             )
         )
+        isCapturedF = true
+        isCapturedB = true
+        capturedUriFront = null
+        capturedUriBack = null
     }
 
     private fun errorSignUp(message: String?) {
@@ -131,13 +135,13 @@ class SignUpFragment : Fragment() {
     private fun resultScannerID() {
         val sharedPreferences =
             requireContext().getSharedPreferences("nombre_pref", Context.MODE_PRIVATE)
-        capturedUriFront = sharedPreferences.getString("claveF", "valor_por_defecto")
+        capturedUriFront = sharedPreferences.getString("claveF", null)
         if (capturedUriFront != null) {
-            isCapturedF = true
+            isCapturedF = false
         }
-        capturedUriBack = sharedPreferences.getString("claveB", "valor_por_defecto")
+        capturedUriBack = sharedPreferences.getString("claveB", null)
         if (capturedUriBack != null) {
-            isCapturedB = true
+            isCapturedB = false
         }
     }
 
