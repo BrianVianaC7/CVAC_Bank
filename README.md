@@ -36,7 +36,9 @@
         <li>Lottie</li>
         <li>Picasso</li>
         <li>CameraX</li>
-        <li>Firebase.</li>
+        <li>Firebase</li>
+        <li>Animations</li>
+        <li>Android Native Libraries</li>
     </ol>
 
   <h2>Criterios de Evaluación</h2>
