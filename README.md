@@ -45,80 +45,122 @@
   <hr>
 
   <p>StoriApp ¡Feliz banca con StoriApp! 🚀📱</p>
+  
 
 <h2>Flujo del App</h2>
 
- <p>Splash</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/6fec7d94-58f2-49b0-984c-575cf9befd16)
- 
+<p>Splash</p>
+
+<p align="start">
+    <a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">   
+        <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/6fec7d94-58f2-49b0-984c-575cf9befd16" alt="Image 14">
+    </a>
+</p>
+
 <hr>
 
- <p>Login</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/ce34567e-c89e-4e2a-ba2b-5ba51a46b9c1)
+<p>Login</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/ce34567e-c89e-4e2a-ba2b-5ba51a46b9c1">
+</a>
 
 <hr>
 
- <p>Recuperar contraseña</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/7967a67b-bce9-4085-8072-16655eb73c62)
+<p>Recuperar contraseña</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/7967a67b-bce9-4085-8072-16655eb73c62">
+</a>
 
- <p>Acción exitosa</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/fc643751-5122-4030-9b2d-1f4e8de1e9ac)
- <p>Acción fallida</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/9efa820a-c082-4692-af4c-fc7b4072d37d)
+<p>Acción exitosa</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/fc643751-5122-4030-9b2d-1f4e8de1e9ac">
+</a>
+
+<p>Acción fallida</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/9efa820a-c082-4692-af4c-fc7b4072d37d">
+</a>
+
+<hr>
+
+<p>Registrarse</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/7dd66407-4b30-4c1f-88ff-0a26fd54d785">
+</a>
+
+<p>Scanner de Identificacion Oficial</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/aa9b7174-cccb-4c2a-b262-6532e4e48e35">
+</a>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/a323a670-7bfe-4375-a360-01dc9b56eaf8">
+</a>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/e700a920-942c-4e6e-a826-d439dd6543c9">
+</a>
+
+<p>Acción exitosa</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/28baaabb-b9ce-4439-9769-5b68628a0cbc">
+</a>
+
+<p>Acción fallida</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/d2928a3d-3bed-4d58-a0e6-2351ba7ab894">
+</a>
+
+<hr>
+
+<p>Inicio</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/3fde8b42-a06c-4389-b7bb-04f1329019b7">
+</a>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/e6083548-47a0-418d-a582-5bfc00c7106e">
+</a>
+
+<hr>
+
+<p>Inicio sin saldo</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/8b7c8035-28d5-4eb3-aad7-7eae390743cc">
+</a>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/d28f4acf-2e09-4b86-8017-b1cb894902e2">
+</a>
+
+<hr>
+
+<p>Inicio sin Movimientos</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/9e14ad3a-5b56-413e-81a8-5f5b99ee542d">
+</a>
+
+<hr>
+
+<p>Detalle de Movimiento</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/25d5d437-54a8-4496-b2b5-8e19cfaeeb6f">
+</a>
+
+<p>Compartir comprobante</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/295d0c9a-4c48-49aa-a74c-1d79e9393ab6">
+</a>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/b113c50d-c355-479a-8384-82ce6cb310a5">
+</a>
+
+<hr>
+
+<p>Cerrar sesión</p>
+<a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
+    <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/03064d14-9055-4ddc-9cdc-7daf66452ce4">
+</a>
+
+<hr>
 
 
- <hr>
-
- <p>Registrarse</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/7dd66407-4b30-4c1f-88ff-0a26fd54d785)
-
- <p>Scanner de Identificacion Oficial</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/aa9b7174-cccb-4c2a-b262-6532e4e48e35)
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/a323a670-7bfe-4375-a360-01dc9b56eaf8)
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/e700a920-942c-4e6e-a826-d439dd6543c9)
- 
- <p>Acción exitosa</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/28baaabb-b9ce-4439-9769-5b68628a0cbc)
-
- <p>Acción fallida</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/d2928a3d-3bed-4d58-a0e6-2351ba7ab894)
-
- <hr>
-
- <p>Inicio</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/3fde8b42-a06c-4389-b7bb-04f1329019b7)
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/e6083548-47a0-418d-a582-5bfc00c7106e)
-
- <hr>
-
- <p>Inicio sin saldo</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/8b7c8035-28d5-4eb3-aad7-7eae390743cc)
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/d28f4acf-2e09-4b86-8017-b1cb894902e2)
- 
- <hr>
-
- <p>Inicio sin Movimientos</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/9e14ad3a-5b56-413e-81a8-5f5b99ee542d)
-
- <hr>
-
- <p>Detalle de Movimiento</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/25d5d437-54a8-4496-b2b5-8e19cfaeeb6f)
-
- <p>Compartir comprobante</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/295d0c9a-4c48-49aa-a74c-1d79e9393ab6)
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/b113c50d-c355-479a-8384-82ce6cb310a5)
-
-
-
- <hr>
- 
- <p>Cerrar sesión</p>
- ![image](https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/03064d14-9055-4ddc-9cdc-7daf66452ce4)
-
- <hr>
- 
- 
  
 
 
