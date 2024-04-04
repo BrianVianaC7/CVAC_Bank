@@ -43,6 +43,7 @@
         <li>Lottie</li>
         <li>Picasso</li>
         <li>CameraX</li>
+        <li>Swipe Refresh Layout</li>
         <li>Firebase</li>
         <li>Animations</li>
         <li>Android Native Libraries</li>
@@ -127,6 +128,7 @@
 <a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
     <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/3fde8b42-a06c-4389-b7bb-04f1329019b7">
 </a>
+<p>Actualización del saldo con Swipe Refresh</p>
 <a href="https://github.com/BrianVianaC7/StoriBrianVianaChallenge">
     <img src="https://github.com/BrianVianaC7/StoriBrianVianaChallenge/assets/120147778/e6083548-47a0-418d-a582-5bfc00c7106e">
 </a>
