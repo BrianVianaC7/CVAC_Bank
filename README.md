@@ -55,6 +55,9 @@
 
   <p>StoriApp ¡Feliz banca con StoriApp! 🚀📱</p>
   
+<h3> Usuario Habilitado activado </h3>
+<p>Correo: brian.vianac@outlook.com</p>
+<p>Contraseña: Contraseña123</p>
 
 <h2>Flujo del App</h2>
 
