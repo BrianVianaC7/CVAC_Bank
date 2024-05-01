@@ -1,7 +1,7 @@
-<h1>StoriApp</h1>
-    <p>StoriApp es una aplicación para Android que ofrece servicios bancarios, permitiendo a los usuarios registrarse, iniciar sesión y acceder a su información bancaria. Los usuarios pueden ver su saldo, historial de movimientos y detalles de cada movimiento</p>
+<h1>CVACApp</h1>
+    <p>CVACApp es una aplicación para Android que ofrece servicios bancarios, permitiendo a los usuarios registrarse, iniciar sesión y acceder a su información bancaria. Los usuarios pueden ver su saldo, historial de movimientos y detalles de cada movimiento</p>
 
-  <h2>Prueba Técnica Stori || Brian Alejandro Viana Clavijo</h2>
+  <h2>Brian Alejandro Viana Clavijo || Bank</h2>
   <h2>Características</h2>
     <ul>
         <li>Registro de Usuario</li>
