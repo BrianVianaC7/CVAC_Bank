@@ -32,10 +32,10 @@
     <p>Los datos de usuario se almacenan en la base de datos en tiempo real de Firebase. Las fotos de identificación se guardan en Firebase Storage, asegurando un almacenamiento seguro y accesible. Además, los servicios en la nube se crean y consumen utilizando Firebase RealTime Database y Retrofit</p>
 
   <h2>Arquitectura</h2>
-    <p>StoriApp sigue la arquitectura MVVM (Modelo-Vista-Modelo de Vista) junto con los principios de Clean Architecture para garantizar la separación de preocupaciones y la mantenibilidad.</p>
+    <p>CVACApp sigue la arquitectura MVVM (Modelo-Vista-Modelo de Vista) junto con los principios de Clean Architecture para garantizar la separación de preocupaciones y la mantenibilidad.</p>
 
   <h2>Bibliotecas Utilizadas</h2>
-    <p>StoriApp utiliza varias bibliotecas:</p>
+    <p>CVACApp utiliza varias bibliotecas:</p>
       <ol>
         <li>Retrofit</li>
         <li>Dagger Hilt</li>
@@ -50,11 +50,11 @@
     </ol>
 
   <h2>Criterios de Evaluación</h2>
-    <p>El desarrollo de StoriApp se adhiere a los siguientes criterios: Implementación de los principios SOLID y prácticas de Código Limpio, Clean Architecture,  Utilización de la arquitectura MVVM, Diseño organizado y estructurado del proyecto, e Implementación funcional que cumple con los requisitos especificados.</p>
+    <p>El desarrollo de CVACApp se adhiere a los siguientes criterios: Implementación de los principios SOLID y prácticas de Código Limpio, Clean Architecture,  Utilización de la arquitectura MVVM, Diseño organizado y estructurado del proyecto, e Implementación funcional que cumple con los requisitos especificados.</p>
 
   <hr>
 
-  <p>StoriApp ¡Feliz banca con StoriApp! 🚀📱</p>
+  <p>CVACApp ¡Feliz banca con CVACApp! 🚀📱</p>
   
 <h3> Usuario Habilitado activado </h3>
 <p>Correo: brian.vianac@outlook.com</p>
